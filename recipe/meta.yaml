@@ -1,8 +1,8 @@
 {%set name = "tldextract" %}
-{%set version = "2.0.2" %}
+{%set version = "2.1.0" %}
 {%set compress_type = "tar.gz" %}
 {%set hash_type = "sha256" %}
-{%set hash_val = "3d6050d48803eef7a3e3a92b840f46477761d4423fe90f68e57b420fec7f19ab" %}
+{%set hash_val = "796d86aa22c382770b28db45547b298cbf855dcdcd8e1c7264419d96c0f2381a" %}
 {%set build_num = "0" %}
 
 package:
