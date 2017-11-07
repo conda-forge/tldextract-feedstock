@@ -1,8 +1,8 @@
 {% set name = "tldextract" %}
-{% set version = "2.1.0" %}
+{% set version = "2.2.0" %}
 {% set bundle = "tar.gz" %}
 {% set hash_type = "sha256" %}
-{% set hash = "796d86aa22c382770b28db45547b298cbf855dcdcd8e1c7264419d96c0f2381a" %}
+{% set hash = "29797125db1f2e72ce2ee51f7a764ec8b1e6588812520795ffeae93bcd46bab4" %}
 {% set build = 0 %}
 
 package:
@@ -30,7 +30,7 @@ requirements:
     - python
     - setuptools
     - idna
-    - requests >=2.1.0
+    - requests >=2.2.0
     - requests-file >=1.4
 
 test:
