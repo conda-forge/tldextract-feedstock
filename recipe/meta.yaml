@@ -15,6 +15,7 @@ source:
   {{ hash_type }}: {{ hash }}
 
 build:
+  noarch: python
   preserve_egg_dir: True
   entry_points:
     - tldextract = tldextract.cli:main
@@ -30,7 +31,7 @@ requirements:
     - python
     - setuptools
     - idna
-    - requests >=2.2.0
+    - requests >=2.1.0
     - requests-file >=1.4
 
 test:
