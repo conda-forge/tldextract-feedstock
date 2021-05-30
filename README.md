@@ -3,7 +3,7 @@ About tldextract
 
 Home: https://github.com/john-kurkowski/tldextract
 
-Package license: BSD 3-Clause
+Package license: BSD-3-Clause
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/tldextract-feedstock/blob/master/LICENSE.txt)
 
