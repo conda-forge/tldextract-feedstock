@@ -1,29 +1,24 @@
 {% set name = "tldextract" %}
-{% set version = "2.2.1" %}
-{% set bundle = "tar.gz" %}
-{% set hash_type = "sha256" %}
-{% set hash = "b72bef6013de67c7fa181250bc2c2e089a994d259c09ca95a9771f2f97e29ed1" %}
-{% set build = 1 %}
+{% set version = "3.0.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.{{ bundle }}
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}
-  {{ hash_type }}: {{ hash }}
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 6101613418cc0bd6e538ee611a15b4ca96c37f45160f6ba93e978363fac86c05
 
 build:
   noarch: python
-  preserve_egg_dir: True
   entry_points:
     - tldextract = tldextract.cli:main
-  number: {{ build }}
-  script: python setup.py install --single-version-externally-managed --record=record.txt
+  number: 0
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
-  build:
+  host:
+    - pip
     - python >=3.6
     - setuptools
 
@@ -40,11 +35,15 @@ test:
 
   commands:
     - tldextract --help
+    - pip check 
+  
+  requires: 
+    - pip
 
 about:
   home: https://github.com/john-kurkowski/tldextract
   license_file: LICENSE
-  license: BSD 3-Clause
+  license: BSD-3-Clause
   license_family: BSD
   summary: 'Accurately separate the TLD from the registered domain andsubdomains of a URL, using the Public Suffix List.'
   dev_url: https://github.com/john-kurkowski/tldextract
