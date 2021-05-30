@@ -29,6 +29,7 @@ requirements:
     - idna
     - requests >=2.1.0
     - requests-file >=1.4
+    - filelock
 
 test:
   imports:
