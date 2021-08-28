@@ -1,5 +1,5 @@
 {% set name = "tldextract" %}
-{% set version = "3.1.0" %}
+{% set version = "3.1.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: cfae9bc8bda37c3e8c7c8639711ad20e95dc85b207a256b60b0b23d7ff5540ea
+  sha256: 1d5883c496da3a8aa71d1f4da4862ce374dc7ccf45e4bb67deb2016ec34f8d33
 
 build:
   noarch: python
@@ -37,9 +37,9 @@ test:
 
   commands:
     - tldextract --help
-    - pip check 
-  
-  requires: 
+    - pip check
+
+  requires:
     - pip
 
 about:
@@ -47,7 +47,7 @@ about:
   license_file: LICENSE
   license: BSD-3-Clause
   license_family: BSD
-  summary: 'Accurately separate the TLD from the registered domain andsubdomains of a URL, using the Public Suffix List.'
+  summary: Accurately separate the TLD from the registered domain andsubdomains of a URL, using the Public Suffix List.
   dev_url: https://github.com/john-kurkowski/tldextract
 
 extra:
