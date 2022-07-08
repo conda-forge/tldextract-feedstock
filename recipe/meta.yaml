@@ -1,5 +1,5 @@
 {% set name = "tldextract" %}
-{% set version = "3.3.0" %}
+{% set version = "3.3.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: adcd24abf21ce3450417cd5a00f23b7e57554ce8ae827334dd12bfcbb6274cf1
+  sha256: fe15ac3205e5a25b61689369f98cb45c7778a8f2af113d7c11559ece5195f2d6
 
 build:
   noarch: python
