@@ -1,11 +1,11 @@
-About tldextract
-================
+About tldextract-feedstock
+==========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/tldextract-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/john-kurkowski/tldextract
 
 Package license: BSD-3-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/tldextract-feedstock/blob/main/LICENSE.txt)
 
 Summary: Accurately separate the TLD from the registered domain andsubdomains of a URL, using the Public Suffix List.
 
