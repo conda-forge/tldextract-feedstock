@@ -7,9 +7,7 @@ Home: https://github.com/john-kurkowski/tldextract
 
 Package license: BSD-3-Clause
 
-Summary: Accurately separate the TLD from the registered domain andsubdomains of a URL, using the Public Suffix List.
-
-Development: https://github.com/john-kurkowski/tldextract
+Summary: Accurately separates a URL's subdomain, domain, and public suffix, using the Public Suffix List (PSL). By default, this includes the public ICANN TLDs and their exceptions. You can optionally support the Public Suffix List's private domains as well.
 
 Current build status
 ====================
