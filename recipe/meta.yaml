@@ -6,49 +6,43 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/tldextract-{{ version }}.tar.gz
   sha256: 366acfb099c7eb5dc83545c391d73da6e3afe4eaec652417c3cf13b002a160e1
 
 build:
-  noarch: python
   entry_points:
     - tldextract = tldextract.cli:main
-  number: 0
-  script: {{ PYTHON }} -m pip install . -vv
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 1
 
 requirements:
   host:
+    - python >=3.8
+    - setuptools >=61.2
+    - setuptools-scm >=6.2
     - pip
-    - python >=3.6
-    - setuptools
-    - setuptools_scm
-
   run:
-    - python >=3.6
-    - setuptools
+    - python >=3.8
     - idna
     - requests >=2.1.0
     - requests-file >=1.4
-    - filelock
+    - filelock >=3.0.8
 
 test:
   imports:
     - tldextract
-
   commands:
-    - tldextract --help
     - pip check
-
+    - tldextract --help
   requires:
     - pip
 
 about:
   home: https://github.com/john-kurkowski/tldextract
-  license_file: LICENSE
+  summary: Accurately separates a URL's subdomain, domain, and public suffix, using the Public Suffix List (PSL). By default, this includes the public ICANN TLDs and their exceptions. You can optionally support the Public Suffix List's private domains as well.
   license: BSD-3-Clause
-  license_family: BSD
-  summary: Accurately separate the TLD from the registered domain andsubdomains of a URL, using the Public Suffix List.
-  dev_url: https://github.com/john-kurkowski/tldextract
+  license_file: LICENSE
 
 extra:
   recipe-maintainers:
