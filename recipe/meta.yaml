@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/tldextract-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/tldextract-{{ version }}.tar.gz
   sha256: d43c7284c23f5dc8a42fd0fee2abede2ff74cc622674e4cb07f514ab3330c338
 
 build:
@@ -14,16 +14,16 @@ build:
     - tldextract = tldextract.cli:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - setuptools >=61.2
     - setuptools-scm >=6.2
     - pip
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - idna
     - requests >=2.1.0
     - requests-file >=1.4
@@ -37,6 +37,7 @@ test:
     - tldextract --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/john-kurkowski/tldextract
