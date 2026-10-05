@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: tldextract
-  version: "5.3.2"
+  version: "5.4.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/tldextract-${{ version }}.tar.gz
-  sha256: c017431bc0800f2d3d1b57cce36e06668f0930f60a6d8c4615d4e2b8da298fa9
+  sha256: 6c9223212c15c25c0da2bf7313893c14f175cb36b64a0c42da67a468e0c61ee3
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   python:
